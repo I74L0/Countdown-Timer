@@ -6,27 +6,34 @@
 
 <main>
     <div class="box">
-        <div class="name">
-            Event Name
-        </div>
-        <div>
-            <div>
-                <p>date</p>
+        <div class="name">Event Name</div>
+        <div class="body">
+            <div class="today">
+                Today: nn:nn nn/nn/nn
             </div>
-            <div>
-                <p>11/11/1111</p>
+            <div class="timer">
+                <div id="day">11</div>
+                <div id="hour">11</div>
+                <div id="minutes">11</div>
+                <div id="seconds">11</div>
+            </div>
+            <div class="event">
+                Event date:
             </div>
         </div>
     </div>
     <div class="form">
         <div>
-            <input type="text" id="nome">
+            <label for="name">Event Name:</label><br>
+            <input type="text" id="name" placeholder="Event name" required>
         </div>
         <div>
-            <input type="text">
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" placeholder="Date of event">
         </div>
         <div>
-            <input type="text">
+            <label for="time">Time (optional):</label><br>
+            <input type="text" id="time" placeholder="Time of event">
         </div>
         <div>
             <button id="start">Start</button>

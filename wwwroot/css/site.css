@@ -11,6 +11,7 @@ html {
 
 main {
   height: 100vh;
+  padding: 0 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -18,18 +19,53 @@ main {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
   height: 50%;
   width: 50%;
   border: 1px solid #000;
   border-radius: 2rem;
   background-color: #22afd3;
+  color: #fff;
   font-size: 1vw;
 }
 
 .name {
   padding: 0.5rem 0;
-  font-size: 2em;
+  font-size: 3em;
   border-radius: 2rem 2rem 0 0;
   text-align: center;
-  background-color: #1494ad;
+  background-color: #1c8094;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.today,
+.event {
+  text-align: center;
+  font-size: 2em;
+}
+
+.timer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3em;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form input {
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
 }
