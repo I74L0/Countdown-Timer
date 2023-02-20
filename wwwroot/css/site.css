@@ -59,6 +59,25 @@ main {
   font-size: 3em;
 }
 
+.timer>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer p {
+  margin-bottom: 0;
+}
+
+.timer p:nth-child(2) {
+  font-size: 0.5em;
+}
+
+.bar {
+  height: 100%;
+  border-left: 2px solid #fff;
+}
+
 .form {
   width: 100%;
   display: flex;
@@ -76,4 +95,9 @@ main {
 
 .input input {
   width: 32%;
+}
+
+#start {
+  padding: .2rem .8rem;
+  border-radius: 1rem;
 }

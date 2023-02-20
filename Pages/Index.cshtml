@@ -12,10 +12,25 @@
                 Today: 00:00 00/00/00
             </div>
             <div class="timer">
-                <div id="days">00</div>
-                <div id="hours">00</div>
-                <div id="minutes">00</div>
-                <div id="seconds">00</div>
+                <div>
+                    <p id="days">00</p>
+                    <p>days</p>
+                </div>
+                <div class="bar"></div>
+                <div>
+                    <p id="hours">00</p>
+                    <p>hours</p>
+                </div>
+                <div class="bar"></div>
+                <div>
+                    <p id="minutes">00</p>
+                    <p>minutes</p>
+                </div>
+                <div class="bar"></div>
+                <div>
+                    <p id="seconds">00</p>
+                    <p>seconds</p>
+                </div>
             </div>
             <div class="event">
                 Event date: 00:00 00/00/00
@@ -33,13 +48,12 @@
         </div>
         <div class="input">
             <label for="time">Time (optional):</label><br>
-            <input type="number" id="hours" placeholder="Hour" max="24">
-            <input type="number" id="minutes" placeholder="Minutes" max="60">
-            <input type="number" id="seconds" placeholder="Seconds" max="60">
+            <input type="number" id="hours" placeholder="Hour" min="0" max="24">
+            <input type="number" id="minutes" placeholder="Minutes" min="0" max="60">
+            <input type="number" id="seconds" placeholder="Seconds" min="0" max="60">
         </div>
     </div>
     <div>
         <button id="start">Start</button>
     </div>
-    <p id="p"></p>
 </main>
