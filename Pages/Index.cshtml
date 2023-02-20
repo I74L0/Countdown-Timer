@@ -9,16 +9,16 @@
         <div class="name">Event Name</div>
         <div class="body">
             <div class="today">
-                Today: nn:nn nn/nn/nn
+                Today: 00:00 00/00/00
             </div>
             <div class="timer">
-                <div id="day">11</div>
-                <div id="hour">11</div>
-                <div id="minutes">11</div>
-                <div id="seconds">11</div>
+                <div id="days">00</div>
+                <div id="hours">00</div>
+                <div id="minutes">00</div>
+                <div id="seconds">00</div>
             </div>
             <div class="event">
-                Event date:
+                Event date: 00:00 00/00/00
             </div>
         </div>
     </div>
@@ -31,12 +31,15 @@
             <label for="date">Date:</label><br>
             <input type="date" id="date" placeholder="Date of event">
         </div>
-        <div>
+        <div class="input">
             <label for="time">Time (optional):</label><br>
-            <input type="text" id="time" placeholder="Time of event">
-        </div>
-        <div>
-            <button id="start">Start</button>
+            <input type="number" id="hours" placeholder="Hour" max="24">
+            <input type="number" id="minutes" placeholder="Minutes" max="60">
+            <input type="number" id="seconds" placeholder="Seconds" max="60">
         </div>
     </div>
+    <div>
+        <button id="start">Start</button>
+    </div>
+    <p id="p"></p>
 </main>

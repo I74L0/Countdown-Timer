@@ -65,7 +65,15 @@ main {
   justify-content: space-evenly;
 }
 
+.form>div {
+  max-width: 20%;
+}
+
 .form input {
   padding: 0 0.5rem;
   border-radius: 0.5rem;
+}
+
+.input input {
+  width: 32%;
 }

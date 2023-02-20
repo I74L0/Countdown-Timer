@@ -1,11 +1,30 @@
-﻿document.getElementById('start').addEventListener("click", function () {
-
-    const date = new Date();
+﻿var event_date = "";
+document.getElementById('start').addEventListener("click", function () {
+    if (document.getElementById("name").value != '' && document.getElementById('date').value != '') {
+        document.querySelector(".name").innerHTML = document.getElementById("name").value;
+        let time = "00:00:00";
+        if (document.querySelector(".input #hours").value != "" && document.querySelector(".input #minutes").value != "" && document.querySelector(".input #seconds").value != "") {
+            time = `${document.querySelector(".input #hours").value}:${document.querySelector(".input #minutes").value}:${document.querySelector(".input #seconds").value}`;
+        }
+        event_date = new Date(`${document.getElementById('date').value} ${time}`);
+        document.querySelector(".event").innerHTML = `Event date: ${(event_date.getHours().toString().length < 2) ? "0" + event_date.getHours() : event_date.getHours()}:${(event_date.getMinutes().toString().length < 2) ? "0" + event_date.getMinutes() : event_date.getMinutes()}:${(event_date.getSeconds().toString().length < 2) ? "0" + event_date.getSeconds() : event_date.getSeconds()} ${(event_date.getDate().toString().length < 2) ? "0" + event_date.getDate() : event_date.getDate()}/${((event_date.getMonth() + 1).toString().length < 2) ? "0" + (event_date.getMonth() + 1) : event_date.getMonth() + 1}/${event_date.getFullYear()}`;
+    }
 });
 
 window.setInterval(function () {
-    const date = new Date("2023-1-1");
+    let local_date = new Date();
 
     // Formats and display the local time
-    document.querySelector(".today").innerHTML = `Today: ${(date.getHours().length < 2) ? "0" + date.getHours() : date.getHours()}:${(date.getMinutes().length < 2) ? "0" + date.getMinutes() : date.getMinutes()}:${(date.getSeconds().length < 2) ? "0" + date.getSeconds() : date.getSeconds()} ${(date.getDate().length < 2) ? "0" + date.getDate() : date.getDate()}/${((date.getMonth() + 1).length < 2) ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1)}/${(date.getFullYear().length < 2) ? "0" + date.getFullYear() : date.getFullYear()}`;
+    document.querySelector(".today").innerHTML = `Today: ${(local_date.getHours().toString().length < 2) ? "0" + local_date.getHours() : local_date.getHours()}:${(local_date.getMinutes().toString().length < 2) ? "0" + local_date.getMinutes() : local_date.getMinutes()}:${(local_date.getSeconds().toString().length < 2) ? "0" + local_date.getSeconds() : local_date.getSeconds()} ${(local_date.getDate().toString().length < 2) ? "0" + local_date.getDate() : local_date.getDate()}/${((local_date.getMonth() + 1).toString().length < 2) ? "0" + (local_date.getMonth() + 1) : local_date.getMonth() + 1}/${local_date.getFullYear()}`;
+
+
+    if (event_date != "") {
+        let time_left = (event_date.getTime() - local_date.getTime()) / 1000;
+        if (time_left > 0) {
+            document.querySelector(".timer #days").innerHTML = Math.trunc(time_left / 86400);
+            document.querySelector(".timer #hours").innerHTML = Math.trunc(time_left % 86400 / 3600);
+            document.querySelector(".timer #minutes").innerHTML = Math.trunc(time_left % 86400 % 3600 / 60);
+            document.querySelector(".timer #seconds").innerHTML = Math.trunc(time_left % 86400 % 3600 % 60);
+        }
+    }
 }, 1000);
